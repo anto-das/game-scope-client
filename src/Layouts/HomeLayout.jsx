@@ -11,9 +11,9 @@ const HomeLayout = () => {
             <main>
 
             </main>
-            {/* <footer>
+            <footer>
               <Footer></Footer>
-            </footer> */}
+            </footer>
         </div>
     );
 };
