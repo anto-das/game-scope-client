@@ -1,9 +1,19 @@
+import Footer from "../Components/Footer";
+import Navbar from "../Components/Navbar";
 
 
 const HomeLayout = () => {
     return (
         <div>
-            <h2 className="text-3xl font-bold text-center">Home lay out</h2>
+            <header className="sticky top-0">
+              <Navbar></Navbar>
+            </header>
+            <main>
+
+            </main>
+            {/* <footer>
+              <Footer></Footer>
+            </footer> */}
         </div>
     );
 };
