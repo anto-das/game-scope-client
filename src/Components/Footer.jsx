@@ -3,11 +3,12 @@ const Footer = () => {
     return (
         <div>
             <footer className="footer footer-center bg-[#20232B] text-base-content rounded p-10">
-  <nav className="grid grid-flow-col gap-4">
+  <nav className="grid grid-flow-row md:grid-flow-col lg:grid-flow-col gap-4">
     <a className="hover:underline hover:text-orange-700 text-gray-200">About us</a>
     <a className="hover:underline hover:text-orange-700 text-gray-200">Contact</a>
     <a className="hover:underline hover:text-orange-700 text-gray-200">Our Audiance</a>
     <a className="hover:underline hover:text-orange-700 text-gray-200">Join Our Team</a>
+    <a className="hover:underline hover:text-orange-700 text-gray-200">All Reviews</a>
   </nav>
   <nav>
     <div className="grid grid-flow-col gap-4">

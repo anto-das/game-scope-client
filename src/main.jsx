@@ -7,11 +7,20 @@ import {
 } from "react-router-dom";
 import HomeLayout from './Layouts/HomeLayout';
 import ErrorLayout from './Layouts/ErrorLayout';
+import SignInPage from './Pages/SignInPage';
+import UpcomingGames from './Components/UpcomingGames';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
+    children:[
+      {
+        path:"/",
+        element:<UpcomingGames></UpcomingGames>,
+        loader:() => fetch("./UpcomingGame.json")
+      }
+    ]
   },
   {
     path:"/allreviews",
@@ -28,6 +37,10 @@ const router = createBrowserRouter([
   {
     path:"/watch",
     element:<div>My watch list</div>
+  },
+  {
+    path:"/signin",
+    element:<SignInPage></SignInPage>
   },
   {
     path:"*",

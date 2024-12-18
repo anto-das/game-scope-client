@@ -3,18 +3,18 @@ import { FaCircleUser } from "react-icons/fa6";
 
 const Navbar = () => {
     const links = <>
-    <NavLink className="font-bold hover:underline hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
-    <NavLink className="font-bold hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/allreviews"}>All Reviews</NavLink>
-    <NavLink className="font-bold hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/addreviews"}>Add Reviews</NavLink>
-    <NavLink className="font-bold hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/myreviews"}>My Reviews</NavLink>
-    <NavLink className="font-bold hover:underline hover:text-orange-500 mr-2 text-md"to={"/watch"}>Game Watch List</NavLink>
+    <NavLink className="font-bold mr-2 text-gray-200 hover:underline hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
+    <NavLink className="font-bold text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/allreviews"}>All-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/addreviews"}>Add-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/myreviews"}>My-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-200 hover:underline hover:text-orange-500 mr-2 text-md"to={"/watch"}>Watch-List</NavLink>
     </>
     return (
         <div>
              <div className="navbar bg-[#20232B]">
   <div className="navbar-start">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost">
+      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden md:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5 text-white"
@@ -38,15 +38,15 @@ const Navbar = () => {
     </div>
     <a className="text-gra-700 text-xl font-bold text-gray-300">Game <span className="text-orange-500">Scope</span></a>
   </div>
-  {/* <div className="navbar-center hidden lg:flex">
+  <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
      {
         links
      }
     </ul>
-  </div> */}
+  </div>
   <div className="navbar-end">
-    <Link to={"/login"} className="btn text-lg font-bold flex justify-between items-center">Sign in now
+    <Link to={"/signin"} className="btn text-md font-bold flex justify-between items-center">Sign in now
     <FaCircleUser />
     </Link>
   </div>

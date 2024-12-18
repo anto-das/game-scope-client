@@ -1,0 +1,73 @@
+[
+    {
+      "game_name": "The Witcher 4",
+      "game_id": "1",
+      "game_description": "Featuring Ciri as the main protagonist, this new chapter in the Witcher universe is highly anticipated.",
+      "game_company": "CD Projekt Red",
+      "game_image": "https://i.ibb.co.com/0hHTW7G/withcher.webp"
+    },
+    {
+      "game_name": "Elden Ring: Nightreign",
+      "game_id": "2",
+      "game_description": "A co-op multiplayer spin-off set in the Elden Ring universe.",
+      "game_company": "FromSoftware",
+      "game_image": "https://i.ibb.co.com/tZyvJXS/elden.jpg"
+    },
+    {
+      "game_name": "Onimusha: Way of the Sword",
+      "game_id": "3",
+      "game_description": "A new entry in the Onimusha series, exploring the early Edo period.",
+      "game_company": "Capcom",
+      "game_image": "https://i.ibb.co.com/dpKyBvq/onimusa.jpg"
+    },
+    {
+      "game_name": "Mafia: The Old Country",
+      "game_id": "4",
+      "game_description": "Set in 1900s Sicily, this game delves into the origins of organized crime.",
+      "game_company": "2K Games",
+      "game_image": "https://i.ibb.co.com/qBgMnRJ/mafia.jpg"
+    },
+    {
+      "game_name": "Final Fantasy 7 Rebirth",
+      "game_id": "5",
+      "game_description": "The next installment of the popular Final Fantasy series, continuing the story of Cloud Strife and his allies.",
+      "game_company": "Square Enix",
+      "game_image": "https://i.ibb.co.com/mt3MMqY/FF7-Rebirth-Review.jpg"
+    },
+    {
+      "game_name": "Star Wars: Outlaws",
+      "game_id": "6",
+      "game_description": "An open-world RPG set in the Star Wars universe, where players can explore different planets and interact with iconic characters.",
+      "game_company": "Ubisoft",
+      "game_image": "https://i.ibb.co.com/0qbZZFR/outlaws.jpg"
+    },
+    {
+      "game_name": "Avowed",
+      "game_id": "7",
+      "game_description": "A new fantasy RPG from Obsidian Entertainment, set in the Pillars of Eternity universe.",
+      "game_company": "Obsidian Entertainment",
+      "game_image": "https://i.ibb.co.com/wh9KNC8/avowed.webp"
+    },
+    {
+      "game_name": "Hades 2",
+      "game_id": "8",
+      "game_description": "The follow-up to the critically acclaimed roguelike game, continuing the story of the Underworld with new characters.",
+      "game_company": "Supergiant Games",
+      "game_image": "https://i.ibb.co.com/nMJ6Vj1/hades.webp"
+    },
+    {
+      "game_name": "Hellblade II: Senua’s Saga",
+      "game_id": "9",
+      "game_description": "A psychological action game that continues the journey of Senua through Norse mythology.",
+      "game_company": "Ninja Theory",
+      "game_image": "https://i.ibb.co.com/C9mfFvr/senuas.png"
+    },
+    {
+      "game_name": "Dragon Age: Dreadwolf",
+      "game_id": "10",
+      "game_description": "The latest entry in the Dragon Age series, promising a darker narrative with deep RPG elements.",
+      "game_company": "BioWare",
+      "game_image": "https://i.ibb.co.com/fXQCQLW/dragon.jpg"
+    }
+  ]
+  
