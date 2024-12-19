@@ -1,13 +1,20 @@
 import { Link, NavLink } from "react-router-dom";
 import { FaCircleUser } from "react-icons/fa6";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
+  const {user,handleSignOut} = useContext(AuthContext);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const links = <>
-    <NavLink className="font-bold mr-2 text-gray-200 hover:underline hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
-    <NavLink className="font-bold text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/allreviews"}>All-Reviews</NavLink>
-    <NavLink className="font-bold text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/addreviews"}>Add-Reviews</NavLink>
-    <NavLink className="font-bold text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/myreviews"}>My-Reviews</NavLink>
-    <NavLink className="font-bold text-gray-200 hover:underline hover:text-orange-500 mr-2 text-md"to={"/watch"}>Watch-List</NavLink>
+    <NavLink className="font-bold mr-2 text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
+    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/allreviews"}>All-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/addreviews"}>Add-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/myreviews"}>My-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 text-md"to={"/watch"}>Watch-List</NavLink>
+    {
+      user &&  <Link onClick={handleSignOut} className="font-bold text-red-500 hover:underline hover:text-orange-500 mr-2 text-md"to={"/"}>Sign-Out</Link>
+    }
     </>
     return (
         <div>
@@ -46,9 +53,28 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link to={"/auth/signin"} className="btn text-md font-bold flex justify-between items-center">Sign in now
-    <FaCircleUser />
-    </Link>
+    {
+      user?.email? <div className="relative inline-block">
+      <img
+        src={user?.photoURL || "https://via.placeholder.com/150"}
+        alt="User Profile"
+        className="w-10 h-10 rounded-full cursor-pointer"
+        onMouseEnter={() => setIsDropdownOpen(true)}
+        onMouseLeave={() => setIsDropdownOpen(false)}
+      />
+
+      {isDropdownOpen && (
+        <p
+          className="absolute right-0 mt-2 p-4 font-bold w-48 bg-white shadow-md rounded-md border text-center border-gray-200"
+        >
+          {user.displayName}
+        </p>
+      )}
+    </div>: <Link to={"/auth/signin"}  className="btn text-md font-bold flex justify-between items-center">
+        Sign in now
+      <FaCircleUser />
+      </Link>
+    }
   </div>
 </div>
         </div>

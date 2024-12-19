@@ -1,22 +1,60 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoEye,IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../Provider/AuthProvider";
 
 const SignUpPage = () => {
-    const [showPassword,setShowPassword] = useState(false)
+    const {signUpWithEmailPassword,setUser,setLoading,updateUserInfo} = useContext(AuthContext);
+    const [error,setError] = useState({});
+    const [showPassword,setShowPassword] = useState(false);
+    const navigate = useNavigate();
+    const regex = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+    const handleSignUp = e =>{
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const photo = e.target.photo.value;
+        if(name.length < 6){
+            setError({...error,name:"Name need must be  5 character or longer"});
+            return;
+        }
+        if(password.length < 8){
+            setError({...error, password:"Password must be 8 character or longer"})
+            return;
+        }
+        if(!regex.test(password)){
+            setError({...error,invalid:"Password must be need to an uppercase and lowercase"})
+            return;
+        }
+        signUpWithEmailPassword(email,password)
+        .then(res =>{
+            setUser(res.user);
+            setLoading(false);
+            updateUserInfo({displayName:name,photoURL:photo})
+            .then(() =>{
+                navigate("/")
+            })
+            
+        })
+        .then(error =>{
+           alert(error)
+        })
+    }
       return (
           <div className="min-h-screen flex justify-center items-center mx-auto">
                <div className="card w-full max-w-lg shrink-0 p-8 border border-orange-500">
                 <h1 className="text-3xl text-center font-bold text-orange-500">Sign-Up Your Account</h1>
                 <div className="divider"></div>
-        <form className="card-body">
+        <form onSubmit={handleSignUp} className="card-body">
         <div className="form-control">
             <label className="label">
               <span className="label-text">Name</span>
             </label>
             <input type="text" name="name" placeholder="Enter your name" className="input input-bordered" required />
             {
-             <label className="label text-xs text-red-500">
+             error && <label className="label text-xs text-red-500">
+                {error.name}
           </label>
           }
           </div>
@@ -37,6 +75,16 @@ const SignUpPage = () => {
               <span className="label-text">Password</span>
             </label>
             <input type={showPassword ? "text":"password"} name="password" placeholder="password" className="input input-bordered" required />
+            {
+                error.password && <label className="label text-xs text-red-500">
+                    {error.password}
+                </label>
+            }
+            {
+                error.invalid && <label className="label text-xs text-red-500">
+                    {error.invalid}
+                </label>
+            }
             <button onClick={()=>setShowPassword(!showPassword)} className="absolute right-8 top-[53px]">
               {
                 showPassword ? <IoEye></IoEye> : <IoEyeOff></IoEyeOff>
