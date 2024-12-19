@@ -4,7 +4,7 @@
       "name": "Baldur's Gate 3",
       "title": "Baldur's Gate 3",
       "description": "A critically acclaimed RPG, offering deep storytelling, tactical combat, and multiplayer co-op gameplay. Set in the Dungeons & Dragons universe, players can explore a vast world filled with choices and consequences.",
-      "image": "https://example.com/images/baldurs_gate_3.jpg",
+      "image": "https://i.ibb.co.com/LvD62cx/baldur.webp",
       "rating": 9.8
     },
     {
@@ -12,7 +12,7 @@
       "name": "The Legend of Zelda: Tears of the Kingdom",
       "title": "The Legend of Zelda: Tears of the Kingdom",
       "description": "The sequel to the highly successful Breath of the Wild, this action-adventure game continues Link's journey with new abilities and a vast open world full of puzzles, enemies, and secrets.",
-      "image": "https://example.com/images/zelda_tears_of_the_kingdom.jpg",
+      "image": "https://i.ibb.co.com/MBzTDFS/zelda.jpg",
       "rating": 9.7
     },
     {
@@ -20,7 +20,7 @@
       "name": "Starfield",
       "title": "Starfield",
       "description": "Bethesda's first new universe in over 25 years, Starfield is a space exploration RPG set in a vast galaxy. Players can explore planets, customize their ships, and embark on missions in an expansive universe.",
-      "image": "https://example.com/images/starfield.jpg",
+      "image": "https://i.ibb.co.com/Np6nSH4/starfield.webp",
       "rating": 8.5
     },
     {
@@ -28,7 +28,7 @@
       "name": "Call of Duty: Modern Warfare III",
       "title": "Call of Duty: Modern Warfare III",
       "description": "The latest installment in the Call of Duty series, this game offers intense multiplayer action, a gripping single-player campaign, and refined mechanics that have become the franchise's hallmark.",
-      "image": "https://example.com/images/cod_mw3.jpg",
+      "image": "https://i.ibb.co.com/sPjKnqZ/call-of-duty.webp",
       "rating": 8.7
     },
     {
@@ -36,7 +36,7 @@
       "name": "Spider-Man 2",
       "title": "Spider-Man 2",
       "description": "The highly anticipated sequel to Spider-Man (PS4), this open-world action game allows players to swing through New York City as both Peter Parker and Miles Morales, taking on new villains and challenges.",
-      "image": "https://example.com/images/spiderman_2.jpg",
+      "image": "https://i.ibb.co.com/d2gMtN9/spider.jpg",
       "rating": 9.5
     },
     {
@@ -44,7 +44,7 @@
       "name": "Cyberpunk 2077: Phantom Liberty",
       "title": "Cyberpunk 2077: Phantom Liberty",
       "description": "The expansion to Cyberpunk 2077, bringing new areas to explore, new storylines, and additional gameplay mechanics. It introduces a new narrative set in a high-stakes world of cybernetic enhancements and corporate intrigue.",
-      "image": "https://example.com/images/cyberpunk_phantom_liberty.jpg",
+      "image": "https://i.ibb.co.com/LNpYJcn/cyber.png",
       "rating": 8.9
     }
   ]

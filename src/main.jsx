@@ -9,6 +9,9 @@ import HomeLayout from './Layouts/HomeLayout';
 import ErrorLayout from './Layouts/ErrorLayout';
 import SignInPage from './Pages/SignInPage';
 import UpcomingGames from './Components/UpcomingGames';
+import AuthLayout from './Layouts/AuthLayout';
+import AuthProvider from './Provider/AuthProvider';
+import SignUpPage from './Pages/SignUpPage';
 
 const router = createBrowserRouter([
   {
@@ -18,7 +21,20 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<UpcomingGames></UpcomingGames>,
-        loader:() => fetch("./UpcomingGame.json")
+      }
+    ]
+  },
+  {
+    path:"auth",
+    element:<AuthLayout></AuthLayout>,
+    children:[
+      {
+        path:"/auth/signin",
+        element:<SignInPage></SignInPage>
+      },
+      {
+        path:"/auth/signup",
+        element:<SignUpPage></SignUpPage>
       }
     ]
   },
@@ -39,16 +55,14 @@ const router = createBrowserRouter([
     element:<div>My watch list</div>
   },
   {
-    path:"/signin",
-    element:<SignInPage></SignInPage>
-  },
-  {
     path:"*",
     element:<ErrorLayout></ErrorLayout>
   }
 ]);
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-  <RouterProvider router={router} />
+    <AuthProvider>
+    <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

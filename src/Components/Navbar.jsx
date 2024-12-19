@@ -46,7 +46,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    <Link to={"/signin"} className="btn text-md font-bold flex justify-between items-center">Sign in now
+    <Link to={"/auth/signin"} className="btn text-md font-bold flex justify-between items-center">Sign in now
     <FaCircleUser />
     </Link>
   </div>

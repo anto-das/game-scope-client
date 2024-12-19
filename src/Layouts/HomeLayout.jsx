@@ -3,6 +3,7 @@ import Banner from "../Components/Banner";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import UpcomingGames from "../Components/UpcomingGames";
+import PupolarGames from "../Components/PupolarGames";
 
 
 const HomeLayout = () => {
@@ -20,6 +21,9 @@ const HomeLayout = () => {
               </section>
               <section className="py-4">
                <Outlet></Outlet>
+              </section>
+              <section>
+                <PupolarGames></PupolarGames>
               </section>
             </main>
             <footer>
