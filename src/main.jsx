@@ -15,6 +15,8 @@ import AddReviewPage from './Pages/AddReviewPage';
 import AllReviewsPage from './Pages/AllReviewsPage';
 import AllReviews from './Components/AllReviews';
 import HighestRatedGames from './Components/HighestRatedGames';
+import ReviewDetailsPage from './Pages/ReviewDetailsPage';
+import MyReviewsLayout from './Layouts/MyReviewsLayout';
 
 const router = createBrowserRouter([
   {
@@ -24,13 +26,14 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<HighestRatedGames></HighestRatedGames>,
-        loader:() => fetch("http://localhost:5000/reviews"),
+        loader:() => fetch("http://localhost:5000/reviews?limit=6"),
       }
     ]
   },
   {
     path:"/reviews/:id",
-    element: <div>reviews details</div>
+    element: <ReviewDetailsPage></ReviewDetailsPage>,
+    loader:({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
   },
   {
     path:"auth",
@@ -53,7 +56,7 @@ const router = createBrowserRouter([
       {
         path:"/allreviews",
         element:<AllReviews></AllReviews>,
-        loader:() => fetch("http://localhost:5000/reviews/all"),
+        loader:() => fetch("http://localhost:5000/reviews"),
       },
     ]
   },
@@ -63,7 +66,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/myreviews",
-    element:<div>hello my reviews</div>
+    element:<MyReviewsLayout></MyReviewsLayout>
   },
   {
     path:"/watch",
