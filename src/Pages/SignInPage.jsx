@@ -15,6 +15,9 @@ const SignInPage = () => {
         .then(res => {
             setUser(res.user)
         })
+        .catch(error =>{
+            alert(error.message)
+        })
     }
     const handleSignInWithGoogle = () =>{
         SignInWithGoogle()

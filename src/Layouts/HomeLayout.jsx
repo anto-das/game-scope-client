@@ -6,6 +6,7 @@ import UpcomingGames from "../Components/UpcomingGames";
 import PupolarGames from "../Components/PupolarGames";
 
 
+
 const HomeLayout = () => {
     return (
         <div>
@@ -16,10 +17,10 @@ const HomeLayout = () => {
               <section className="">
               <Banner></Banner>
               </section>
-              <section>
-
-              </section>
               <section className="py-4">
+                <UpcomingGames></UpcomingGames>
+              </section>
+              <section className="my-3 w-11/12 mx-auto">
                <Outlet></Outlet>
               </section>
               <section>

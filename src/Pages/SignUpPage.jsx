@@ -2,9 +2,11 @@ import { useContext, useState } from "react";
 import { IoEye,IoEyeOff } from "react-icons/io5";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from 'sweetalert2'
+import Loading from "../Components/Loading";
 
 const SignUpPage = () => {
-    const {signUpWithEmailPassword,setUser,setLoading,updateUserInfo} = useContext(AuthContext);
+    const {signUpWithEmailPassword,setUser,setLoading,updateUserInfo,loading} = useContext(AuthContext);
     const [error,setError] = useState({});
     const [showPassword,setShowPassword] = useState(false);
     const navigate = useNavigate();
@@ -27,8 +29,16 @@ const SignUpPage = () => {
             setError({...error,invalid:"Password must be need to an uppercase and lowercase"})
             return;
         }
+        if(loading){
+            return <Loading></Loading>
+        }
         signUpWithEmailPassword(email,password)
         .then(res =>{
+            Swal.fire({
+                title: "Sign up successfull !",
+                icon: "success",
+                draggable: true
+              });
             setUser(res.user);
             setLoading(false);
             updateUserInfo({displayName:name,photoURL:photo})
@@ -37,8 +47,8 @@ const SignUpPage = () => {
             })
             
         })
-        .then(error =>{
-           alert(error)
+        .catch((error) =>{
+           alert(error.message)
         })
     }
       return (

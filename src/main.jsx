@@ -8,10 +8,13 @@ import {
 import HomeLayout from './Layouts/HomeLayout';
 import ErrorLayout from './Layouts/ErrorLayout';
 import SignInPage from './Pages/SignInPage';
-import UpcomingGames from './Components/UpcomingGames';
 import AuthLayout from './Layouts/AuthLayout';
 import AuthProvider from './Provider/AuthProvider';
 import SignUpPage from './Pages/SignUpPage';
+import AddReviewPage from './Pages/AddReviewPage';
+import AllReviewsPage from './Pages/AllReviewsPage';
+import AllReviews from './Components/AllReviews';
+import HighestRatedGames from './Components/HighestRatedGames';
 
 const router = createBrowserRouter([
   {
@@ -20,9 +23,14 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<UpcomingGames></UpcomingGames>,
+        element:<HighestRatedGames></HighestRatedGames>,
+        loader:() => fetch("http://localhost:5000/reviews"),
       }
     ]
+  },
+  {
+    path:"/reviews/:id",
+    element: <div>reviews details</div>
   },
   {
     path:"auth",
@@ -40,11 +48,18 @@ const router = createBrowserRouter([
   },
   {
     path:"/allreviews",
-    element:<div>hello all reviews</div>
+    element:<AllReviewsPage></AllReviewsPage>,
+    children:[
+      {
+        path:"/allreviews",
+        element:<AllReviews></AllReviews>,
+        loader:() => fetch("http://localhost:5000/reviews/all"),
+      },
+    ]
   },
   {
     path:"/addreviews",
-    element:<div>hello add reviews</div>
+    element:<AddReviewPage></AddReviewPage>
   },
   {
     path:"/myreviews",
