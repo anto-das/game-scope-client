@@ -20,6 +20,7 @@ import MyReviewsLayout from './Layouts/MyReviewsLayout';
 import WatchListPage from './Pages/WatchListPage';
 import UpdateReviewPage from './Pages/UpdateReviewPage';
 import UpdateReview from './Components/UpdateReview';
+import PrivateRoute from './Routes/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path:"/reviews/:id",
-    element: <ReviewDetailsPage></ReviewDetailsPage>,
+    element:<PrivateRoute> <ReviewDetailsPage></ReviewDetailsPage></PrivateRoute>,
     loader:({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
   },
   {
@@ -65,23 +66,23 @@ const router = createBrowserRouter([
   },
   {
     path:"/addreviews",
-    element:<AddReviewPage></AddReviewPage>
+    element:<PrivateRoute><AddReviewPage></AddReviewPage></PrivateRoute>
   },
   {
     path:"/myreviews",
-    element:<MyReviewsLayout></MyReviewsLayout>
+    element:<PrivateRoute><MyReviewsLayout></MyReviewsLayout></PrivateRoute>
   },
   {
     path:"/watch",
-    element:<WatchListPage></WatchListPage>
+    element:<PrivateRoute><WatchListPage></WatchListPage></PrivateRoute>
   },
   {
     path:"/updateReview",
-    element:<UpdateReviewPage></UpdateReviewPage>,
+    element:<PrivateRoute><UpdateReviewPage></UpdateReviewPage></PrivateRoute>,
     children:[
       {
         path:"/updateReview/:id",
-        element:<UpdateReview></UpdateReview>,
+        element:<PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
         loader:({params}) => fetch(`http://localhost:5000/myreviews/${params.id}`)
       }
     ]

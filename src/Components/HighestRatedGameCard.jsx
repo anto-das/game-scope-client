@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const HighestRatedGameCard = ({review}) => {
     const {gameName,thumbnail,rating,published,description,_id} = review;
     return (
-        <div className="card card-compact bg-base-100 shadow-md">
+        <div className="bg-base-100 shadow-md">
         <figure>
           <img
             src={thumbnail}
-            alt={gameName} />
+            alt={gameName} className="h-64"/>
         </figure>
         <div className="card-body">
           <h2 className="card-title"> {gameName} </h2>

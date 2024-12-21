@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { IoEye,IoEyeOff } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const SignInPage = () => {
     const {setUser,SignInWithGoogle,setLoading,signInWithEmailPassword} = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
     const [showPassword,setShowPassword] = useState(false)
     const handleSignIn = e =>{
         e.preventDefault()
@@ -14,6 +15,7 @@ const SignInPage = () => {
         signInWithEmailPassword(email,password)
         .then(res => {
             setUser(res.user)
+            navigate(location?.state? location.state : "/")
         })
         .catch(error =>{
             alert(error.message)
@@ -24,10 +26,10 @@ const SignInPage = () => {
         .then(res => {
             setUser(res.user);
             setLoading(false);
-            navigate("/")
+            navigate(location?.state? location.state : "/")
         })
         .catch(err =>{
-            alert(err.message)
+            console.log(err.message)
         })
     }
     return (

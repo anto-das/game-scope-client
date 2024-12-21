@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const UpdateReview = () => {
     const [value, setValue] = useState("");
+    const navigate = useNavigate();
     const data = useLoaderData();
     const { gameName, thumbnail, rating, published, description,genres, email, name , _id} = data;
       const handleSelect = select => {
@@ -45,6 +46,8 @@ const UpdateReview = () => {
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
+                    event.target.reset();
+                    navigate("/")
             }
         })
     }

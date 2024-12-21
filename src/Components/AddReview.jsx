@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const AddReview = () => {
   const { user } = useContext(AuthContext);
   const [value, setValue] = useState("");
+  const navigate = useNavigate();
+  const location = useLocation();
   const handleSelect = select => {
     setValue(select);
   }
@@ -45,6 +48,7 @@ const AddReview = () => {
             confirmButtonText: 'Ok'
           });
           event.target.reset();
+          navigate(location?.state? location.state : "/");
         }
       })
   }

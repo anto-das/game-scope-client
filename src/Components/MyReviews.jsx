@@ -22,7 +22,11 @@ const MyReviews = () => {
             <h1 className="text-2xl font-bold">Your Reviews: {reviews.length} </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-3">
                 {
-                    reviews.map(review => <MyReviewsCard key={review._id} review={review}></MyReviewsCard>)
+                    reviews.map(review => <MyReviewsCard key={review._id}
+                    review={review}
+                    setReviews={setReviews}
+                    reviews={reviews}
+                    ></MyReviewsCard>)
                 }
             </div>
         </div>
