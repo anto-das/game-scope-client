@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
+import MyReviews from '../Components/MyReviews';
 
 const MyReviewsLayout = () => {
     return (
@@ -10,7 +11,7 @@ const MyReviewsLayout = () => {
             </header>
             <main>
                <section className='w-11/12 mx-auto py-5'>
-                hello my reviews
+                <MyReviews></MyReviews>
                </section>
             </main>
             <footer>

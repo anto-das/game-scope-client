@@ -17,6 +17,9 @@ import AllReviews from './Components/AllReviews';
 import HighestRatedGames from './Components/HighestRatedGames';
 import ReviewDetailsPage from './Pages/ReviewDetailsPage';
 import MyReviewsLayout from './Layouts/MyReviewsLayout';
+import WatchListPage from './Pages/WatchListPage';
+import UpdateReviewPage from './Pages/UpdateReviewPage';
+import UpdateReview from './Components/UpdateReview';
 
 const router = createBrowserRouter([
   {
@@ -70,7 +73,18 @@ const router = createBrowserRouter([
   },
   {
     path:"/watch",
-    element:<div>My watch list</div>
+    element:<WatchListPage></WatchListPage>
+  },
+  {
+    path:"/updateReview",
+    element:<UpdateReviewPage></UpdateReviewPage>,
+    children:[
+      {
+        path:"/updateReview/:id",
+        element:<UpdateReview></UpdateReview>,
+        loader:({params}) => fetch(`http://localhost:5000/myreviews/${params.id}`)
+      }
+    ]
   },
   {
     path:"*",
