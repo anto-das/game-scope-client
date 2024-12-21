@@ -4,14 +4,18 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import UpcomingGames from "../Components/UpcomingGames";
 import PupolarGames from "../Components/PupolarGames";
+import { AuthContext } from "../Provider/AuthProvider";
+import { useContext } from "react";
 
 
 
 const HomeLayout = () => {
+  const {toggle, setToggle} = useContext(AuthContext);
     return (
-        <div>
+        <div className={toggle && "bg-[#0f172a]"}>
             <header className="sticky top-0 z-10">
               <Navbar></Navbar>
+              <input onClick={() => setToggle(!toggle)} type="checkbox" className="toggle toggle-error" defaultChecked />
             </header>
             <main>
               <section className="">

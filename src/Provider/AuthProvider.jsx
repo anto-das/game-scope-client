@@ -7,6 +7,7 @@ const AuthProvider = ({children}) => {
     const [loading,setLoading] = useState(true);
     const [user,setUser] = useState(null);
     const provider = new GoogleAuthProvider();
+    const [toggle,setToggle] = useState(false);
     const SignInWithGoogle = () =>{
         return signInWithPopup(auth,provider)
     };
@@ -39,6 +40,8 @@ const AuthProvider = ({children}) => {
         signUpWithEmailPassword,
         signInWithEmailPassword,
         updateUserInfo,
+        toggle,
+        setToggle,
     }
     useEffect(() =>{
         const unSubscribe = onAuthStateChanged(auth,currentUser =>{

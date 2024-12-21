@@ -3,7 +3,7 @@ const PopularGameCard = ({popularGameData}) => {
     const {name,image,description} = popularGameData;
     return (
         <div className="w-full">
-        <div className="border-b flex-col md:flex-row lg:flex-row mb-2 space-y-3">
+        <div className="border-b flex-col md:flex-row lg:flex-row mb-2 bg-white p-4 space-y-3">
           <div className="w-full">
           <img
             src={image}
