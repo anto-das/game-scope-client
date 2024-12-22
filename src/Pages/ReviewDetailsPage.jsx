@@ -6,7 +6,7 @@ const ReviewDetailsPage = () => {
     const reviewDetails = useLoaderData();
     const {gameName,description,rating,thumbnail,name,email,genres} = reviewDetails;
     const handleWatchList = () =>{
-        fetch("http://localhost:5000/watch_lists",{
+        fetch("https://game-scope-server.vercel.app/watch_lists",{
             method:"POST",
             headers:{
                 "content-type" : "application/json"

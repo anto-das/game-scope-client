@@ -15,7 +15,7 @@ const MyReviewsCard = ({review,reviews,setReviews}) => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myreviews/${_id}`,{
+                fetch(`https://game-scope-server.vercel.app/myreviews/${_id}`,{
                     method:"DELETE",
                 })
                 .then(res => res.json())

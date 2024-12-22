@@ -8,7 +8,7 @@ const WatchLists = () => {
     
         useEffect(()=>{
            if(email){
-            fetch(`http://localhost:5000/watch_lists?email=${email}`)
+            fetch(`https://game-scope-server.vercel.app/watch_lists?email=${email}`)
             .then(res => res.json())
             .then(data => {
                 setwatchLists(data)

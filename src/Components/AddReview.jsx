@@ -31,7 +31,7 @@ const AddReview = () => {
       return;
     }
     const addData = { gameName, thumbnail, rating, published, description,genres, email, name };
-    fetch("http://localhost:5000/reviews", {
+    fetch("https://game-scope-server.vercel.app/reviews", {
       method: "POST",
       headers: {
         "content-type": "application/json"

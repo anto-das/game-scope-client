@@ -30,7 +30,7 @@ const UpdateReview = () => {
         }
         const updatedData = { gameName, thumbnail, rating, published, description,genres, email, name };
         
-        fetch(`http://localhost:5000/myreviews/${_id}`,{
+        fetch(`https://game-scope-server.vercel.app/myreviews/${_id}`,{
             method:"PUT",
             headers:{
                 "content-type" : "application/json"

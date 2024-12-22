@@ -10,7 +10,7 @@ const MyReviews = () => {
 
     useEffect(()=>{
        if(email){
-        fetch(`http://localhost:5000/myreviews?email=${email}`)
+        fetch(`https://game-scope-server.vercel.app/myreviews?email=${email}`)
         .then(res => res.json())
         .then(data => {
             setReviews(data)

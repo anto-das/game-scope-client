@@ -30,14 +30,14 @@ const router = createBrowserRouter([
       {
         path:"/",
         element:<HighestRatedGames></HighestRatedGames>,
-        loader:() => fetch("http://localhost:5000/reviews?limit=6"),
+        loader:() => fetch("https://game-scope-server.vercel.app/reviews?limit=6"),
       }
     ]
   },
   {
     path:"/reviews/:id",
     element:<PrivateRoute> <ReviewDetailsPage></ReviewDetailsPage></PrivateRoute>,
-    loader:({params}) => fetch(`http://localhost:5000/reviews/${params.id}`)
+    loader:({params}) => fetch(`https://game-scope-server.vercel.app/reviews/${params.id}`)
   },
   {
     path:"auth",
@@ -60,7 +60,7 @@ const router = createBrowserRouter([
       {
         path:"/allreviews",
         element:<AllReviews></AllReviews>,
-        loader:() => fetch("http://localhost:5000/reviews"),
+        loader:() => fetch("https://game-scope-server.vercel.app/reviews"),
       },
     ]
   },
@@ -83,7 +83,7 @@ const router = createBrowserRouter([
       {
         path:"/updateReview/:id",
         element:<PrivateRoute><UpdateReview></UpdateReview></PrivateRoute>,
-        loader:({params}) => fetch(`http://localhost:5000/myreviews/${params.id}`)
+        loader:({params}) => fetch(`https://game-scope-server.vercel.app/myreviews/${params.id}`)
       }
     ]
   },

@@ -4,7 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 
 const Navbar = () => {
-  const {user,handleSignOut} = useContext(AuthContext);
+  const {user,handleSignOut,setToggle,toggle} = useContext(AuthContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const links = <>
     <NavLink className="font-bold mr-2 text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
@@ -18,7 +18,7 @@ const Navbar = () => {
     </>
     return (
         <div>
-             <div className="navbar bg-[#20232B]">
+             <div className="navbar bg-[#20232B] py-6">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden md:hidden">
