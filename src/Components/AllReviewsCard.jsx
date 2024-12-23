@@ -16,7 +16,7 @@ const AllReviewsCard = ({review}) => {
     <p className="text-lg font-bold">Published : {published} </p>
     <Link to={`/reviews/${_id}`}>
     <div className="w-full">
-      <button className="btn btn-accent w-full">Explore now</button>
+      <button className="btn btn-accent w-full rounded-none">Explore now</button>
     </div>
     </Link>
   </div>
