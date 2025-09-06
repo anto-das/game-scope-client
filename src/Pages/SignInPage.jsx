@@ -33,7 +33,7 @@ const SignInPage = () => {
         })
     }
     return (
-        <div className="min-h-screen flex justify-center items-center mx-auto ">
+        <div className="min-h-screen flex justify-center items-center mx-auto my-20">
              <div className="card w-full max-w-lg shrink-0 p-8 border">
               <h1 className="text-3xl text-center font-bold text-orange-500">Login Your Account</h1>
               <div className="divider"></div>

@@ -13,9 +13,8 @@ const HomeLayout = () => {
   const {toggle, setToggle} = useContext(AuthContext);
     return (
         <div className={toggle && "bg-[#0f172a]"}>
-            <header className="sticky top-0 z-10 relative">
+            <header className="sticky top-0 z-10 ">
               <Navbar></Navbar>
-              <input onClick={() => setToggle(!toggle)} type="checkbox" className="toggle toggle-error absolute bottom-1" defaultChecked />
             </header>
             <main>
               <section className="">

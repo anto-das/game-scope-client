@@ -7,7 +7,8 @@ const Navbar = () => {
   const {user,handleSignOut,setToggle,toggle} = useContext(AuthContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const links = <>
-    <NavLink className="font-bold mr-2 text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
+    <ul className="menu menu-horizontal px-1 pt-4">
+      <NavLink className="font-bold mr-2 text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
     <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/allreviews"}>All-Reviews</NavLink>
     <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/addreviews"}>Add-Reviews</NavLink>
     <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/myreviews"}>My-Reviews</NavLink>
@@ -15,10 +16,11 @@ const Navbar = () => {
     {
       user &&  <Link onClick={handleSignOut} className="font-bold text-red-500 hover:underline hover:text-orange-500 mr-2 text-md"to={"/"}>Sign-Out</Link>
     }
+    </ul>
     </>
     return (
         <div>
-             <div className="navbar bg-[#20232B] py-6">
+             <div className="navbar bg-[#20232B] py-2">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden md:hidden">
@@ -44,13 +46,14 @@ const Navbar = () => {
       </ul>
     </div>
     <a className="text-gra-700 text-xl font-bold text-gray-300">Game <span className="text-orange-500">Scope</span></a>
+  
   </div>
+  
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    
      {
         links
      }
-    </ul>
   </div>
   <div className="navbar-end">
     {
