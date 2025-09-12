@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { FaCircleUser } from "react-icons/fa6";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import '../utilites/navbar.css'
 
 const Navbar = () => {
   const {user,handleSignOut,setToggle,toggle} = useContext(AuthContext);

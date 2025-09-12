@@ -4,15 +4,12 @@ import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar";
 import UpcomingGames from "../Components/UpcomingGames";
 import PupolarGames from "../Components/PupolarGames";
-import { AuthContext } from "../Provider/AuthProvider";
-import { useContext } from "react";
 
 
 
 const HomeLayout = () => {
-  const {toggle, setToggle} = useContext(AuthContext);
     return (
-        <div className={toggle && "bg-[#0f172a]"}>
+        <div>
             <header className="sticky top-0 z-10 ">
               <Navbar></Navbar>
             </header>
