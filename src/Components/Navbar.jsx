@@ -9,11 +9,11 @@ const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const links = <>
     <ul className="menu menu-horizontal px-1 pt-4">
-      <NavLink className="font-bold mr-2 text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
-    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/allreviews"}>All-Reviews</NavLink>
-    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/addreviews"}>Add-Reviews</NavLink>
-    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 mb-2 text-md"to={"/myreviews"}>My-Reviews</NavLink>
-    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:underline hover:text-orange-500 mr-2 text-md"to={"/watch"}>Watch-List</NavLink>
+      <NavLink className="font-bold mr-2 text-gray-700 md:text-gray-200 lg:text-gray-200 hover:text-orange-500 mb-2 text-md"to={"/"}>Home</NavLink>
+    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:text-orange-500 mr-2 mb-2 text-md"to={"/allreviews"}>All-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:text-orange-500 mr-2 mb-2 text-md"to={"/addreviews"}>Add-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:text-orange-500 mr-2 mb-2 text-md"to={"/myreviews"}>My-Reviews</NavLink>
+    <NavLink className="font-bold text-gray-700 md:text-gray-200 lg:text-gray-200 hover:text-orange-500 mr-2 text-md"to={"/watch"}>Watch-List</NavLink>
     {
       user &&  <Link onClick={handleSignOut} className="font-bold text-red-500 hover:underline hover:text-orange-500 mr-2 text-md"to={"/"}>Sign-Out</Link>
     }
